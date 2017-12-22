@@ -14,5 +14,13 @@
     "path": "^0.12.7"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "Peer matching app utilizing Express, Node JS and production-level deployment",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewbfr/friendFinder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewbfr/friendFinder/issues"
+  },
+  "homepage": "https://github.com/andrewbfr/friendFinder#readme"
 }
