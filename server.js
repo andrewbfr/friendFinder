@@ -12,11 +12,11 @@ console.log("I'm a toaster");
 // =============================================================
 var app = express();
 
-// Set the view engine to ejs
-app.set('view engine', 'ejs');
+var PORT = process.env.PORT || 5000;
 
+//revisit this to see if Heroku needs this in deployment
 // Heroku will set the port via an environment variable
-app.set('port', (process.env.PORT || 5000));
+// app.set('port', (process.env.PORT || 5000));
 
 // Configure middleware to support JSON and URL encoded bodies
 app.use(bodyParser.json());
@@ -27,8 +27,13 @@ var defaultPath = path.join(__dirname, '/');
 
 // Configure Routes
 // =============================================================
-htmlRoutes.setup(defaultPath, app, data);
-apiRoutes.setup(defaultPath, app, data);
+// ROUTER
+// The below points our server to a series of "route" files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
+// ================================================================================
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // Finally, configure a catch all for baloney http requests
 app.all('*', function(req, res, next) {
@@ -40,6 +45,7 @@ app.all('*', function(req, res, next) {
 
 // Listen for http requests
 // =============================================================
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
-});
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+  });
+  
