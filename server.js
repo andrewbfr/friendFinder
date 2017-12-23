@@ -32,19 +32,12 @@ var defaultPath = path.join(__dirname, '/');
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
-
-// Finally, configure a catch all for baloney http requests
-app.all('*', function(req, res, next) {
-    // Send a permanent redirect response
-   
-    res.redirect(301, 'https://http.cat/404');
-    next();
-});
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // Listen for http requests
 // =============================================================
+// develop a standard redirect to the home page or some error page (http.cat) if there is an incorrect or unavailable http request
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
   });
