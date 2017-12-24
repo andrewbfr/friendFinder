@@ -1,6 +1,7 @@
 // receive data from submission form, store as an object
+
 //begin friends with some "dummy" data
-var friends = [
+var friendBucket = [
     {
         name: "Toast",
         photo:"https://images.theconversation.com/files/92297/original/image-20150818-12436-j4pzri.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1012&h=668&fit=crop",
@@ -36,4 +37,4 @@ var friends = [
     }
 ];
 
-module.exports = friends;
+module.exports = friendBucket;

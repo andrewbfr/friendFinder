@@ -7,13 +7,15 @@
     <title>FF Survey</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-     <!-- Jquery -->
+    <!-- Jquery -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script> 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- local JS file -->
+    <script type="text/javascript" src="../../server.js"></script>
 </head>
 <body>
     <div class="container">
@@ -37,7 +39,7 @@
                         Name (Required)
                     </h4>
                     <div class="form-group">
-                        <input type="text" name="nombre" class="form-control">
+                        <input type="text" name="nombre" class="form-control" id="nombre">
                     </div>
                 </span>
                 <span>
@@ -45,7 +47,7 @@
                         Photo (Required)
                     </h4>
                     <div class="form-group">
-                        <input type="text" name="photo" class="form-control">
+                        <input type="text" name="photo" class="form-control" id="photo">
                     </div>
                 </span>
 
@@ -61,7 +63,7 @@
                 <h4>
                     You prefer dark toast over light toast.
                 </h4>
-                <select class="chosen-select" id="q1" required>
+                <select id="q1" required>
                     <option value="" disabled selected>Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -79,7 +81,7 @@
                 <h4>
                     You shy away from political debate.
                 </h4>
-                <select class="chosen-select" id="q2" required>
+                <select id="q2" required>
                     <option value="" disabled selected>Select an option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -97,7 +99,7 @@
                     <h4>
                         Reciprocal action against aggressors is the ideal route.
                     </h4>
-                    <select class="chosen-select" id="q3" required>
+                    <select id="q3" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -115,7 +117,7 @@
                     <h4>
                         People tend to be naturally acquisitive.
                     </h4>
-                    <select class="chosen-select" id="q4" required>
+                    <select id="q4" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -133,7 +135,7 @@
                     <h4>
                         On weekends you prefer to engage in thoughtful engagement and study over forgetful festivities.
                     </h4>
-                    <select class="chosen-select" id="q5" required>
+                    <select id="q5" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -151,7 +153,7 @@
                     <h4>
                         Being the center of attention and conversation is imperative to you.
                     </h4>
-                    <select class="chosen-select" id="q6" required>
+                    <select id="q6" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -169,7 +171,7 @@
                     <h4>
                         Organizing house and office delivers the utmost joy.
                     </h4>
-                    <select class="chosen-select" id="q7" required>
+                    <select id="q7" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -187,7 +189,7 @@
                     <h4>
                         Travel is one of your passions.
                     </h4>
-                    <select class="chosen-select" id="q8" required>
+                    <select id="q8" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -205,7 +207,7 @@
                     <h4>
                         Athletic accomplishment never drew your attention.
                     </h4>
-                    <select class="chosen-select" id="q9" required>
+                    <select id="q9" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -223,7 +225,7 @@
                     <h4>
                         Quick decisions are more important than lengthy considerations.
                     </h4>
-                    <select class="chosen-select" id="q10" required>
+                    <select id="q10" required>
                         <option value="" disabled selected>Select an option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -234,9 +236,11 @@
                 </div>
             </div>
             <br>
+
+            <!-- submission button -->
             <div class="row">
                 <div>
-                    <button type="button" class="col-md-12 btn btn-primary" aria-label="Left Align">
+                    <button type="button" class="col-md-12 btn btn-primary" aria-label="Left Align" id="subber">
                         <h4>
                             <span class="glyphicon glyphicon-ok-circle" aria-hidden="true">
                             </span>
@@ -247,6 +251,7 @@
             </div>
             
         <hr>
+        <!-- footer -->
         <footer class="footer">
             <div class="container">
                 <p>
@@ -259,3 +264,47 @@
     </div>
 </body>
 </html>
+<script>
+    $("#subber").on("click", function(event) {
+      event.preventDefault();
+
+      // Here we develop new friend object
+      var userData = {
+        name: document.getElementById("nombre").value,
+        photo: document.getElementById("photo").value,
+        scores: [
+          document.getElementById("q1").value,
+          document.getElementById("q2").value,
+          document.getElementById("q3").value,
+          document.getElementById("q4").value,
+          document.getElementById("q5").value,
+          document.getElementById("q6").value,
+          document.getElementById("q7").value,
+          document.getElementById("q8").value,
+          document.getElementById("q9").value,
+          document.getElementById("q10").value
+    
+          ]
+        };
+
+      console.log(userData);
+
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // give it a URL, we give it the object, then we have a "callback".
+
+      $.post("/api/friends", userData,
+        function(data) {
+          // If a table is available... tell user they are booked.
+            console.log(data)
+            console.log(userData)
+            console.log(`\nThis is the data from your callback:\n ${data}\n`);
+          
+          // If a table is available... tell user they on the waiting list.
+            console.log("Sorry, something else happened");
+          // Clear the form when submitting
+            $("#nombre").val("");
+            $("#photo").val("");
+        });
+
+    });
+</script>
