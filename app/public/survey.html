@@ -296,6 +296,7 @@
       $.ajax({
         type: "POST",
         url: "/api/friends",
+        data: userData
       }).done(function(data){
             // If a table is available... tell user they are booked.
             console.log(data)
