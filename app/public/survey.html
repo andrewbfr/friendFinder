@@ -269,6 +269,7 @@
       event.preventDefault();
 
       // Here we develop new friend object
+      // trim the values of whitespace
       var userData = {
         name: document.getElementById("nombre").value,
         photo: document.getElementById("photo").value,
@@ -292,19 +293,19 @@
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // give it a URL, we give it the object, then we have a "callback".
 
-      $.post("/api/friends", userData,
-        function(data) {
-          // If a table is available... tell user they are booked.
+      $.ajax({
+        type: "POST",
+        url: "/api/friends",
+      }).done(function(data){
+            // If a table is available... tell user they are booked.
             console.log(data)
             console.log(userData)
             console.log(`\nThis is the data from your callback:\n ${data}\n`);
-          
-          // If a table is available... tell user they on the waiting list.
+            // if no friend with such a name exists
             console.log("Sorry, something else happened");
-          // Clear the form when submitting
+            // Clear the form when submitting
             $("#nombre").val("");
             $("#photo").val("");
         });
-
-    });
+      });
 </script>
