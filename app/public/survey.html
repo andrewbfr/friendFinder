@@ -266,7 +266,7 @@
 </html>
 <script>
     $("#subber").on("click", function(event) {
-      event.preventDefault();
+    //   event.preventDefault();
 
       // Here we develop new friend object
       // trim the values of whitespace
@@ -294,15 +294,15 @@
       // give it a URL, we give it the object, then we have a "callback".
 
       $.ajax({
-        type: "POST",
+        method: "POST",
         url: "/api/friends",
         data: userData
       }).done(function(data){
-            // If a table is available... tell user they are booked.
+            // If data is passed through
             console.log(data)
             console.log(userData)
             console.log(`\nThis is the data from your callback:\n ${data}\n`);
-            // if no friend with such a name exists
+            // if no was validated
             console.log("Sorry, something else happened");
             // Clear the form when submitting
             $("#nombre").val("");

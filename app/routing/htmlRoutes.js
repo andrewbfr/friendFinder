@@ -3,6 +3,7 @@
 
 // We need to include the path package to get the correct file path for our html
 var path = require("path");
+console.log("I am htmlRoutes.js");
 
 module.exports = function(app) {
     //directly to survey (will be called with a button-click)

@@ -1,5 +1,5 @@
 // receive data from submission form, store as an object
-
+console.log("I am friends.js");
 //begin friends with some "dummy" data
 var friendBucket = [
     {
