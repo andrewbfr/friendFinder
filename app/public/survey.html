@@ -293,11 +293,12 @@
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // give it a URL, we give it the object, then we have a "callback".
 
-      $.ajax({
-        method: "POST",
-        url: "/api/friends",
-        data: userData
-      }).done(function(data){
+    //   $.ajax({
+    //     method: "POST",
+    //     url: "/api/friends",
+    //     data: userData
+    //   }).done
+      $.post("/api/friends", userData, function (data) {
             // If data is passed through
             console.log(data)
             console.log(userData)
@@ -308,5 +309,5 @@
             $("#nombre").val("");
             $("#photo").val("");
         });
-      });
+    });
 </script>

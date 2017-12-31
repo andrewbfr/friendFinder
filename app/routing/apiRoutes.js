@@ -32,9 +32,9 @@ module.exports = function(app){
         // return res.json(friends);
     });
 
-    app.post("api/friends", function(req, res){
+    app.post("/api/friends", function(req, res){
         console.log(`This is the POST route request's body ${req.body}`);
-        friendBucket.push(req.body);
+        submissionData.push(req.body);
         // develop the logic for the compatibility checks
     });
 }
