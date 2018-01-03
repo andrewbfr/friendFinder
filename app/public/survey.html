@@ -265,6 +265,9 @@
 </body>
 </html>
 <script>
+    var bucket = require("../data/friends");
+    var differences = 0;
+
     $("#subber").on("click", function(event) {
     //   event.preventDefault();
 
@@ -289,21 +292,17 @@
         };
 
       console.log(userData);
+      var newUserScores = userData.scores;
+      console.log(newUserScores);
 
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // give it a URL, we give it the object, then we have a "callback".
 
-    //   $.ajax({
-    //     method: "POST",
-    //     url: "/api/friends",
-    //     data: userData
-    //   }).done
       $.post("/api/friends", userData, function (data) {
             // If data is passed through
-            console.log(data)
-            console.log(userData)
-            console.log(`\nThis is the data from your callback:\n ${data}\n`);
-            // if no was validated
+            console.log(`\nThis is the data passed to the API through a POST: \n${data}\n`);
+            console.log(userData);
+            // if no data was validated
             console.log("Sorry, something else happened");
             // Clear the form when submitting
             $("#nombre").val("");

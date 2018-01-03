@@ -9,8 +9,9 @@ module.exports = function(app){
     app.get("/api/friends", function(req, res){
         res.json(submissionData);
         console.log(submissionData);
-        var friends = submissionData[0].name;
-        console.log(friends);
+            for (var i = 0; i < submissionData.length; i++){    
+                console.log(`This is a friend's name:\n${submissionData[i].name}\n`);
+            };
     });
 
     // GET route to get individual friends
