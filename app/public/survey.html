@@ -265,8 +265,7 @@
 </body>
 </html>
 <script>
-    var bucket = require("../data/friends");
-    var differences = 0;
+  
 
     $("#subber").on("click", function(event) {
     //   event.preventDefault();
@@ -298,12 +297,12 @@
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // give it a URL, we give it the object, then we have a "callback".
 
+    //   add a .done to this post AJAX
       $.post("/api/friends", userData, function (data) {
             // If data is passed through
             console.log(`\nThis is the data passed to the API through a POST: \n${data}\n`);
             console.log(userData);
-            // if no data was validated
-            console.log("Sorry, something else happened");
+         
             // Clear the form when submitting
             $("#nombre").val("");
             $("#photo").val("");
