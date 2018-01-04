@@ -300,12 +300,20 @@
     //   add a .done to this post AJAX
       $.post("/api/friends", userData, function (data) {
             // If data is passed through
-            console.log(`\nThis is the data passed to the API through a POST: \n${data}\n`);
-            console.log(userData);
-         
+            console.log(`\nThis is the data passed to the API through a POST: \n${data.name}\n`);
+            console.log(userData.name);
+            function compatableCheck(){
+            // for each score in submissionData, find difference between corresponding score in newFriend.scores array.
+            // for (var i = 0; i < submissionData.length; i++){
+                
+
+            // }
+        };
+        // compatableCheck();
             // Clear the form when submitting
             $("#nombre").val("");
             $("#photo").val("");
+            // develop clearing form function for the select elements. say select all of the select elements and make them the default value
         });
     });
 </script>

@@ -34,11 +34,13 @@ module.exports = function(app){
     });
 
     app.post("/api/friends", function(req, res){
-        console.log(`This is the POST route request's body ${req.body}`);
-        submissionData.push(req.body);
+        var newFriend = req.body;
+        console.log(`This is the first score from newfriend object ${newFriend.scores[0]}`);
+        submissionData.push(newFriend);
         //JUST RETURN and it is fine. you can return the data and that's all the app.post wants you to do. otherwise it sits and waits for  minutes before the browser issues an empty response error, even though the request was sent and received with status 200
+        
+        console.log("end of post route")
         return res.json(submissionData);
-        compatableCheck();
         // develop the logic for the compatibility checks
     });
 }
