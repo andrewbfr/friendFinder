@@ -19,7 +19,7 @@ var PORT = process.env.PORT || 5000;
 // app.set('port', (process.env.PORT || 5000));
 
 // Configure middleware to support JSON and URL encoded bodies
-app.use(express.static('./app/public'));
+app.use(express.static('./app'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 

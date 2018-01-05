@@ -1,6 +1,7 @@
-var friendBucket = require("../app/data/friends.js")
+var friendBucket = require("../app/data/friends");
+
 $("#subber").on("click", function(event) {
-    //   event.preventDefault();
+      event.preventDefault();
 
       // Here we develop new friend object
       // trim the values of whitespace
@@ -18,7 +19,6 @@ $("#subber").on("click", function(event) {
           parseInt(document.getElementById("q8").value),
           parseInt(document.getElementById("q9").value),
           parseInt(document.getElementById("q10").value)
-    
           ]
         };
 
@@ -33,22 +33,21 @@ $("#subber").on("click", function(event) {
             // If data is passed through
             console.log(`\nThis is the data passed to the API through a POST: \n${userData.name}\n`);
             console.log(userData.name);
-            function compatableCheck(){
+            function compatableCheck(myself = this.friends.length - 1, friends = this.friends){
             // for each score in submissionData, find difference between corresponding score in newFriend.scores array.
             // for (var i = 0; i < submissionData.length; i++){
-                
-
             // }
-            var bestFriendDifference = 0;
+            var bestFriend = myself;
+            var bestFriendDifference = 1000;
 
         // Loop through the set of friends
         // Calculate total difference between myself and each friend
         // Whichever stranger has the smallest total difference is my new best friend
             for (var i = 0; i < friends.length; i++) {
-                const stranger = friends[i];
+                var stranger = friends[i];
                 // Obviously, I am my own best friend. No need to calculate differences.
                 if (stranger.name === myself.name) continue;
-                let totalDifferences = 0;
+                var totalDifferences = 0;
                 // For each stranger in the set of friends
                 // Calculate the total difference in scores
                 for (var j = 0; j < stranger.scores; j++) {
